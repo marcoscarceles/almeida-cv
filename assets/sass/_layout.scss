@@ -2,9 +2,9 @@
     position: absolute;
     overflow: hidden;
 
-    &__left {
-        float: left;
-        width: $width-left-col;
+    &__main {
+        float: right;
+        width: $width-main-col;
         height: 100%;
         padding: 3rem 4rem;
 
@@ -20,14 +20,14 @@
         }
     }
 
-    &__right {
+    &__secondary {
         position: absolute;
-        float: right;
-        width: $width-right-col;
+        float: left;
+        width: $width-secondary-col;
         background-color: $color-right-col;
         height: 100%;
         padding: 2rem 3rem;
-        right: 1rem;
+        left: 1rem;
 
         @include shadow(0.5);
     }

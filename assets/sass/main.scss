@@ -9,6 +9,10 @@ $color-secondary: {{ .Site.Params.colorSecondary | default "#aaa"}} !default;
 $color-grey-dark: {{ .Site.Params.colorDark | default "#666"}} !default;
 $pages: {{ .Site.Params.pages | default 1}} !default;
 
+@import "fontawesome/fontawesome";
+@import "fontawesome/solid";
+@import "fontawesome/v4-shims";
+
 @import "abstract";
 @import "functions";
 @import "mixins";
@@ -18,6 +22,7 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 
 @import "components/section";
 @import "components/side_section";
+@import "components/timeline";
 @import "components/experience";
 @import "components/education";
 @import "components/contact";

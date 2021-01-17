@@ -1,0 +1,34 @@
+
+                {{if ne .Employer nil}}
+                <div class="experience__header">
+                    <h3 class="experience__company">
+                        {{ .Employer | safeHTML }}
+                    </h3>
+                    <h3 class="experience__place experience__place__{{ .Country | lower}}">{{ .Place | safeHTML }}</h3>
+                </div>
+                {{end}}
+                {{ range .Positions }}
+                <div class="experience__job">
+                    <div class="experience__subheader">
+                        <h3 class="experience__position">
+                            {{ .Title | safeHTML}}
+                        </h3>
+                        <h3 class="experience__date">{{ .Date | safeHTML }}</h3>
+                    </div>
+                        {{ range .Projects }}
+                        <p class="experience__project">{{if ne .Title nil}}<span class="experience__project__title">{{.Title}}: </span>{{end}}{{.Tagline}}</p>
+                        {{ end}}
+                        <ul>
+                        {{ range .Details }}
+                        <li class="experience__bullet">{{ . | safeHTML }}</p>
+                        {{ end }}
+                        </ul>
+                    <div class="experience__badges">
+                        <ul>
+                            {{ range .Badges }}
+                            <li class="experience__badge">{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+                {{ end }}
