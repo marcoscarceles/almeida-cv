@@ -1,16 +1,14 @@
-{{ if .Experience }}
+{{ if .Timeline }}
 <div id="experience" class="section">
     <div class="section__heading">
         <h2 class="section__title">{{ i18n "experience" }}</h2>
     </div>
     <div class="section__content">
         <div class="experience">
-            {{ range .Experience }}
-            {{ if .Class }}
-            <div class="experience__item {{ .Class }}">
-            {{ else }}
+        {{ range .Site.Data.content.Timeline }}
+
+            {{ if eq .Type "Employment" }}
             <div class="experience__item">
-            {{ end }}
                 <div class="experience__header">
                     <h3 class="experience__company">
                         {{ .Employer | safeHTML }}
@@ -41,6 +39,8 @@
                 {{ end }}
             </div>
             {{ end }}
+
+        {{ end }}
         </div>
     </div>
 </div>
