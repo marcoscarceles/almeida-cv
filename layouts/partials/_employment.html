@@ -2,7 +2,11 @@
                 {{if ne .Employer nil}}
                 <div class="experience__header">
                     <h3 class="experience__company">
+                        {{if ne .Logo nil}}
+                        <img src="img/{{.Logo}}" alt="{{ .Employer | safeHTML }}"/>                        
+                        {{else}}
                         {{ .Employer | safeHTML }}
+                        {{end}}
                     </h3>
                     <h3 class="experience__place experience__place__{{ .Country | lower}}">{{ .Place | safeHTML }}</h3>
                 </div>
@@ -15,9 +19,13 @@
                         </h3>
                         <h3 class="experience__date">{{ .Date | safeHTML }}</h3>
                     </div>
-                        {{ range .Projects }}
-                        <p class="experience__project">{{if ne .Title nil}}<span class="experience__project__title">{{.Title}}: </span>{{end}}{{.Tagline}}</p>
-                        {{ end}}
+                        {{if ne .Projects nil }}
+                        <div class="experience__projects">
+                            {{ range .Projects }}
+                            <p class="experience__project">{{if ne .Title nil}}<span class="experience__project__title">{{.Title}}: </span>{{end}}{{.Tagline}}</p>
+                            {{ end}}
+                            </div>
+                        {{end}}
                         <ul>
                         {{ range .Details }}
                         <li class="experience__bullet">{{ . | safeHTML }}</p>

@@ -1,0 +1,34 @@
+{{ if .Values }}
+<div class="sideSection">
+    <div class="sideSection__heading">
+        <h2 class="sideSection__title">{{ i18n "values" }}</h2>
+    </div>
+    <div class="sideSection__content">
+        <p>
+            I believe in agile as a set of
+            values as opposed to a set of
+            techniques or ceremonies,
+            after all, it is
+        </p>
+        <p style="font-style: italic; text-align: center; margin: 1rem 0;">
+            Individuals and interactions
+            over processes and tools
+        </p>
+        <p>
+            Although I have successfully
+            implemented XP / Scrum /
+            Kanban techniques like TDD,
+            BDD, pair programming,
+            continuous delivery or
+            retrospectives (among others)
+            I believe great teams deliver
+            great software when there is
+        </p>
+        <ul class="values">
+            {{ range .Values }}
+            <li class="values__item">{{ . | safeHTML }}</li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

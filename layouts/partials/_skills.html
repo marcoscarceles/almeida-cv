@@ -4,18 +4,22 @@
         <h2 class="sideSection__title">{{ i18n "skills" }}</h2>
     </div>
     <div class="sideSection__content">
+        <p class="intro">{{.Site.Data.content.Skills.Intro}}</p>
+        <p>
+            Whilst I consider
+            <span class="skills__core">Leadership</span>,
+            <span class="skills__core">Agile</span>,
+            <span class="skills__core">Lean</span> and
+            <span class="skills__core">JVM OSS ecosystem</span>,
+            to be my core skills; in the past I've also successfully applied:
+
         <ul class="skills">
-            <li>
-                {{ range .Skills }}
-                <ul class="skills__group">
-                    <span>{{ .Family | safeHTML }}</span>
-                    <br>
-                    {{ range .Items }}
-                    <li>{{ . | safeHTML }}</li>
-                    {{ end }}
-                </ul>
-                {{ end }}
-            </li>
+            {{ range .Skills.Items}}
+            {{ if ne .Weight "minor"}}<li style="font-size:{{ .Weight }}em;">{{ .Value | safeHTML }}</li>{{ end }}
+            {{ end }}
+            {{ range where .Skills.Items "Weight" "eq" "minor"}}
+            <li style="font-size:0.8em;"> {{ .Value | safeHTML }}</li>
+            {{ end }}
         </ul>
     </div>
 </div>

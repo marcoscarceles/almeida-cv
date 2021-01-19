@@ -1,0 +1,20 @@
+{{ if .OpenSource }}
+{{with .OpenSource}}
+<div id="opensource" class="section">
+    <div class="section__heading">
+        <h2 class="section__title">{{ i18n "opensource" }}</h2>
+    </div>
+    <div class="section__content">
+        <p>{{.Intro | safeHTML }}</p>
+        {{if ne .Projects nil}}
+        <dl>
+            {{range .Projects}}
+            <dt class="opensource__project"><a href="{{.Link | default .Name}}">{{.Name}}</a></dt>
+            <dd class="opensource__description">{{.Description}}</dd>
+            {{end}}
+          </dl>
+        {{end}}
+    </div>
+</div>
+{{end}}
+{{ end }}

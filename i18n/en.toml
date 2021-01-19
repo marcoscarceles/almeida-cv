@@ -7,17 +7,26 @@ other = "Experience"
 [education]
 other = "Education"
 
+[values]
+other = "Values"
+
 [references]
 other = "References"
 
 [skills]
-other = "Skills"
+other = "Skills Cloud"
 
 [languages]
 other = "Languages"
 
 [diplomas]
-other = "Diplomas"
+other = "Training"
+
+[recognitions]
+other = "Recognitions"
+
+[opensource]
+other = "Open Source"
 
 [interests]
 other = "Interests"

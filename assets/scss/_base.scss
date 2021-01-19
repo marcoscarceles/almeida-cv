@@ -37,9 +37,25 @@ body {
     margin: 0px;
 }
 
+a, a:visited, a:hover, a:focus {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.motto {
+    font-style: italic;
+    float: right;
+    &:before {
+        content: open-quote;
+    }
+    &:after {
+        content: close-quote;
+    }
+}
+
 @media print {
     @page {
-        margin: 0;
+        // margin: 1cm;
         size: A4;
     }
 }

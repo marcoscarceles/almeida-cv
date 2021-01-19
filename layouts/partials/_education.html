@@ -8,6 +8,7 @@
     <div class="section__content">
         {{ range .Education }}
             <div class="education__item">
+                <img class="education__logo" src="/img/{{.Logo}}"/>
                 <h3 class="education__title">{{ .Course | safeHTML }}</h3>
                 <h4 class="education__place">{{ .Place | safeHTML }}</h4>
                 <h4 class="education__date">{{ .Date | safeHTML }}</h4>

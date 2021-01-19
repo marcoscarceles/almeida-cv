@@ -1,16 +1,23 @@
-{{ if .Site.Data.content.Timeline }}
+{{ if .Timeline }}
 <div id="timeline" class="section">
     <div class="section__heading">
         <h2 class="section__title">{{ i18n "experience" }}</h2>
     </div>
     <div class="section__content">
-        <div class="timeline">
-            {{ range .Site.Data.content.Timeline }}
-            <div class="timeline__item timeline__item__{{.Type | lower}}">
+        <div class="experience timeline">
+            {{ range .Timeline }}
+            <div class="experience__item timeline__item timeline__item__{{.Type | lower}}">
 
             {{ if eq .Type "Employment" }}
             {{ partial "_employment.html" . }}
             {{ end }}
+
+            {{ if eq .Type "Event" }}
+            {{ partial "_event.html" . }}
+            {{ end }}
+            {{ if eq .Type "Break" }}
+            <div class="force-break"></div>
+            {{end}}
 
             </div>
             {{ end }}

@@ -10,6 +10,7 @@
         &:not(:first-child) {
             padding-top: 1.5rem;
         }
+        // TODO - Review START : What if we remove this?
         margin-bottom: 10px;
         margin-top: 10px;
 
@@ -22,7 +23,14 @@
             //background: linear-gradient(blue, red);
             margin-top: 25px;
         }
+        // TODO - Review END
     }
+
+    // TODO - Review START : What if we remove this?
+    &__header {
+        margin-top: 1rem;
+    }
+    // TODO - Review END
 
     &__header,
     &__subheader {
@@ -33,6 +41,7 @@
     }
 
     &__job {
+        @include avoid-break;
         position: relative;
         transition: transform 0.2s cubic-bezier($cubic);
         margin-bottom: 2rem;
@@ -47,10 +56,17 @@
         text-align: left;
         width: 70%;
         float: left;
+        // margin-bottom: 1em;
     }
 
     &__company {
+        // color: $color-grey-dark;
         color: $color-dark;
+        height:27px;
+        img {
+            position: absolute;
+            height: 1.17em;
+        }
     }
 
     &__position {
@@ -96,12 +112,15 @@
     }
 
     &__bullet {
-        list-style: square inside;
-        margin-left: 1rem;
+        // TODO - Review alternatives
+        // list-style: square inside;
+        // margin-left: 1rem;
+        list-style-position: outside;
+        margin-left: 2em;
     }
 
     &__badges {
-        display: block;
+        display: none;
         text-align: right;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
@@ -117,11 +136,54 @@
         padding: 0.1rem 0.6rem;
     }
 
+    &__projects {
+        margin-bottom: 0.5em;        
+    }
     &__project {
         font-style: italic;
         &__title {
             font-style: normal;
             font-weight: bold;
         }
+    }
+
+    &__event {
+        border-left: 3px solid $color-primary;
+        font-style: italic;
+        padding: 1em 2em;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -4px;
+            height: 2em;
+            background-color: $color-white;
+            width: 5px;
+            margin-top: -1em;
+        }
+        &:after {
+            font-family: 'font awesome 5 free';
+            content: fa-content($fa-var-exclamation-circle);
+            position: absolute;
+            top: 50%;
+            left: -0.5em;
+            color: $color-primary;
+            font-style: normal;
+            line-height: 1em;
+            text-align: center;
+            text-indent: -2px;
+            width: 1em;
+            margin-top: -0.5em;
+        }
+    }
+}
+
+.force-break {
+    color: red;
+    @include force-break;
+    @media print {
+        margin: 0 0 10cm 0;
+        break-before: always;
     }
 }

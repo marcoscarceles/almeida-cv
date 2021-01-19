@@ -1,4 +1,20 @@
 .skills {
+
+    &__core {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    & li {
+        display: inline-block;
+        &:after {
+            content: ", ";
+        }
+    
+        &:last-child:after {
+            content: "";
+        }
+    }
+
     &__group {
         margin-bottom: 0.8rem;
 
