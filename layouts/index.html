@@ -8,16 +8,22 @@
             {{ partial "_avatar.html" . }}
             {{ partial "_contacts.html" . }}
             {{ partial "_skills.html" . }}
+            {{ partial "_values.html" . }}
             {{ partial "_languages.html" . }}
             {{ partial "_diplomas.html" . }}
-            {{ partial "_interests.html" . }}
+            {{ partial "_recognitions.html" . }}
         </div>
         <div class="content__main">
             <h1 class="mainHeading">{{.Site.Data.content.BasicInfo.FirstName}} <span>{{.Site.Data.content.BasicInfo.LastName}}</span></h1>
+            {{with .Site.Data.content.BasicInfo.Motto}}
+            <blockquote class="motto"><a href="{{.Link}}">{{.Tag}}</a></blockquote>
+            {{end}}
 
             {{ partial "_profile.html" . }}
             {{ partial "_timeline.html" . }}
             {{ partial "_education.html" . }}
+            {{ partial "_opensource.html" . }}
+            {{ partial "_interests.html" . }}
 
         </div>
     </div>

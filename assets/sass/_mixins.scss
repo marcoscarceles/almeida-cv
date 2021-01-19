@@ -28,3 +28,9 @@
         page-break-inside: avoid;
     }
 }
+
+@mixin force-break {
+    @media print {
+        break-after: always;
+    }
+}

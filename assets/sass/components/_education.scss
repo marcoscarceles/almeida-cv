@@ -2,4 +2,11 @@
     &__item {
         @include avoid-break;
     }
+    &__logo {
+        height: 6rem;
+        width: 6rem;
+        // display: inline-block;
+        float: left;
+        margin: 0 1rem 0 0;
+    }
 }

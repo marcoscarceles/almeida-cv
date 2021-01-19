@@ -11,7 +11,6 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 
 @import "fontawesome/fontawesome";
 @import "fontawesome/solid";
-@import "fontawesome/v4-shims";
 
 @import "abstract";
 @import "functions";
@@ -22,13 +21,14 @@ $pages: {{ .Site.Params.pages | default 1}} !default;
 
 @import "components/section";
 @import "components/side_section";
-@import "components/timeline";
 @import "components/experience";
 @import "components/education";
 @import "components/contact";
 @import "components/avatar";
+@import "components/values";
 @import "components/skills";
 @import "components/languages";
 @import "components/interests";
+@import "components/opensource";
 
 @import "components/404";
