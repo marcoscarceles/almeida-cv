@@ -4,7 +4,7 @@
         <h2 class="sideSection__title">{{ i18n "skills" }}</h2>
     </div>
     <div class="sideSection__content">
-        <p class="intro">{{.Site.Data.content.Skills.Intro}}</p>
+        <p class="intro">{{.Skills.Intro}}</p>
         <p>
             Whilst I consider
             <span class="skills__core">Leadership</span>,
@@ -19,7 +19,7 @@
             <li style="font-size:1.4em;"> {{ .Value | safeHTML }}</li>
             {{ end }}
 
-            {{ range where ..Skills.Items "Weight" "eq" "L"}}
+            {{ range where .Skills.Items "Weight" "eq" "L"}}
             <li style="font-size:1.2em;"> {{ .Value | safeHTML }}</li>
             {{ end }}
 

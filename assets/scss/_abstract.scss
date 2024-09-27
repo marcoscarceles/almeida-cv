@@ -1,7 +1,7 @@
 // WIDTHS
-$width-main-col: 56rem; // 70%
+$width-left-col: 56rem; // 70%
 $page-width: 80rem;
-$width-secondary-col: $page-width - $width-main-col;
+$width-right-col: $page-width - $width-left-col;
 
 // ANIMATIONS
 $cubic: 0.63, 0.21, 0.76, 1.58;

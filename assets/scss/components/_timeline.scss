@@ -14,7 +14,7 @@
 	&__item::before {
 		@extend %fa-icon;
 		@extend .fas;		
-		color: $color-white;
+		// color: "#fff";
 		padding: 0.3em;
         width: 2em;
         height: 2em;

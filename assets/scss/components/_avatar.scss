@@ -1,6 +1,6 @@
 .avatar {
     width: 100%;
-    height: $width-secondary-col - 6rem;
+    height: $width-right-col - 6rem;
     position: relative;
     overflow: hidden;
 
@@ -8,7 +8,7 @@
         @include hz-center;
         width: 100%;
         clip-path: circle(50% at 50% 56%);
-        height: $width-secondary-col - 8rem;
+        height: $width-right-col - 8rem;
         text-align: center;
         transition: all 0.3s cubic-bezier($cubic);
 
