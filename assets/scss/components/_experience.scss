@@ -64,8 +64,9 @@
         color: $color-dark;
         height:27px;
         img {
-            position: absolute;
+            // position: absolute;
             height: 1.17em;
+            margin-right: .5em;
         }
     }
 
@@ -100,13 +101,18 @@
             font-weight: 900;
         }
         &__uk::after {
-            content: '\01F1EC\01F1E7';
+            content: "🇬🇧";
             padding-left: 3px;
             font-size: 1.6rem;
         }
         &__es::after {
-            content: "\01F1EA\01F1F8";
+            content: "🇪🇸";
             padding-left: 3px;
+            font-size: 1.6rem;
+        }
+        &__globe::after {
+            content: "🌎";
+            padding-left: 0.5rem;
             font-size: 1.6rem;
         }
     }

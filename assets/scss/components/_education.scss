@@ -1,5 +1,8 @@
 .education {
+    display: flex;
+    flex-direction: column;
     &__item {
+        margin-top: 1em;
         @include avoid-break;
     }
     &__logo {

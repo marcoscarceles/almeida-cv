@@ -14,11 +14,25 @@
             to be my core skills; in the past I've also successfully applied:
 
         <ul class="skills">
-            {{ range .Skills.Items}}
-            {{ if ne .Weight "minor"}}<li style="font-size:{{ .Weight }}em;">{{ .Value | safeHTML }}</li>{{ end }}
+
+            {{ range where .Skills.Items "Weight" "eq" "XL"}}
+            <li style="font-size:1.4em;"> {{ .Value | safeHTML }}</li>
             {{ end }}
-            {{ range where .Skills.Items "Weight" "eq" "minor"}}
+
+            {{ range where ..Skills.Items "Weight" "eq" "L"}}
+            <li style="font-size:1.2em;"> {{ .Value | safeHTML }}</li>
+            {{ end }}
+
+            {{ range where .Skills.Items "Weight" "==" nil }}
+            <li style="font-size:1em;"> {{ .Value | safeHTML }}</li>
+            {{ end }}
+
+            {{ range where .Skills.Items "Weight" "eq" "S"}}
             <li style="font-size:0.8em;"> {{ .Value | safeHTML }}</li>
+            {{ end }}
+
+            {{ range where .Skills.Items "Weight" "eq" "XS"}}
+            <li style="font-size:0.6em;"> {{ .Value | safeHTML }}</li>
             {{ end }}
         </ul>
     </div>

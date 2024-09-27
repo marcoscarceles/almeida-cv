@@ -2,11 +2,23 @@
                 {{if ne .Employer nil}}
                 <div class="experience__header">
                     <h3 class="experience__company">
-                        {{if ne .Logo nil}}
-                        <img src="img/{{.Logo}}" alt="{{ .Employer | safeHTML }}"/>                        
-                        {{else}}
-                        {{ .Employer | safeHTML }}
-                        {{end}}
+
+                        {{ if reflect.IsSlice .Employer }}
+                            {{ range .Employer }}
+                                {{ if ne .Logo nil }}
+                                    <img class="experience__logo" src="img/{{.Logo}}" alt="{{ .Name | safeHTML }}"/>
+                                {{ else }}
+                                    {{ .Name | safeHTML }}
+                                {{ end }}
+                            {{ end }}
+                        {{ else}}
+                            {{ if ne .Employer.Logo nil }}
+                                <img src="img/{{.Employer.Logo}}" alt="{{ .Employer.Name | safeHTML }}"/>
+                            {{ else }}
+                                {{ .Employer.Name | safeHTML }}
+                            {{ end }}
+                        {{ end }}
+
                     </h3>
                     <h3 class="experience__place experience__place__{{ .Country | lower}}">{{ .Place | safeHTML }}</h3>
                 </div>
