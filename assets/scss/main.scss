@@ -10,6 +10,7 @@ $color-icon-primary: {{ .Site.Params.colorIconPrimary | default "#fff"}} !defaul
 $color-icon-background: {{ .Site.Params.colorIconBackground | default "#e3bfb8"}} !default;
 
 $color-right-col-background: {{ .Site.Params.colorRightColumnBackground | default "#f5f5f5" }} !default;
+$color-right-col-heading-lines: {{ .Site.Params.colorRightColumnHeadingText | default "#666" }} !default;
 $color-right-col-heading-text: {{ .Site.Params.colorRightColumnHeadingText | default "#666" }} !default;
 $color-right-col-body-text: {{ .Site.Params.colorRightColumnBodyText | default "#666" }} !default;
 $color-right-col-icon-primary: {{ .Site.Params.colorRightColumnIconPrimary | default "#fff" }} !default;

@@ -18,8 +18,9 @@
         &::before {
             content: '';
             position: absolute;
-            border-top: 1px solid $color-right-col-heading-text;
-            border-bottom: 1px solid $color-right-col-heading-text;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            border-color: $color-primary;
             width: 10rem;
             height: 4px;
             margin-top: 1.1rem;
