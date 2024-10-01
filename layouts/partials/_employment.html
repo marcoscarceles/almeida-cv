@@ -40,7 +40,7 @@
                         {{end}}
                         <ul>
                         {{ range .Details }}
-                        <li class="experience__bullet">{{ . | safeHTML }}</p>
+                        <li class="experience__bullet">{{ . | markdownify }}</p>
                         {{ end }}
                         </ul>
                     <div class="experience__badges">
