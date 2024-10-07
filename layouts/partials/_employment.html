@@ -20,7 +20,12 @@
                         {{ end }}
 
                     </h3>
-                    <h3 class="experience__place experience__place__{{ .Country | lower}}">{{ .Place | safeHTML }}</h3>
+                    <div class="experience__location">
+                        <h3 class="experience__location__place">{{ .Place | safeHTML }}</h3>
+                        {{ range .Icons }}
+                            <img class="experience__location__icon" src="{{ . }}">
+                        {{ end }}
+                    </div>
                 </div>
                 {{end}}
                 {{ range .Positions }}

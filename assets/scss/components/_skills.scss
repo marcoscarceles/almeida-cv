@@ -1,54 +1,105 @@
 .skills {
 
-    &__core {
-        font-weight: bold;
-        font-size: 1.5em;
+    &__header {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        padding-top: 1rem;
     }
-    & li {
-        display: inline-block;
-        &:after {
-            content: ", ";
+
+    &__core {
+        font-size: 1.3em;
+        text-align: right;
+        &__progressbar__container {
+            width: 100%;
+            background-color: #f3f3f3;
+            margin-bottom: .5em;
+            border: 1px solid $color-primary;
         }
     
-        &:last-child:after {
-            content: "";
+        &__progressbar {
+            height: 1em;
+            background-color: $color-primary;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+    
+            &__XL {
+                width: 100%
+            }
+            &__L {
+                width: 80%
+            }
+            &__M {
+                width: 60%;
+            }
+        }    
+    }
+
+    &__other {
+
+        & li {
+            display: inline-block;
+            &:after {
+                content: ", ";
+            }
+
+            &:last-child:after {
+                content: "";
+            }
+        }
+
+
+        &__XL {
+            font-size: 1.3em;
+        }
+        &__L {
+            font-size: 1.2em;
+        }
+        &__M {
+            font-size: 1.0em;
+        }
+        &__S {
+            font-size: 0.8em;
+        }
+        &__XS {
+            font-size: 0.6em;
         }
     }
 
-    &__group {
-        margin-bottom: 0.8rem;
+    // &__group {
+    //     margin-bottom: 0.8rem;
 
-        & span {
-            font-weight: 700;
-            display: inline-block;
+    //     & span {
+    //         font-weight: 700;
+    //         display: inline-block;
 
-            &::after{
-                content: ":"
-            }
+    //         &::after{
+    //             content: ":"
+    //         }
 
-            &:hover ~ li {
-                background-color: $color-primary;
-                color: $color-light;
-            }
+    //         &:hover ~ li {
+    //             background-color: $color-primary;
+    //             color: $color-light;
+    //         }
 
-        }
+    //     }
 
-        & li{
-            display: inline-block;
-            font-size: 105%;
-            font-weight: 400;
-            transition: all 0.2s ease-in-out;
-            padding: 0 1px;
-            border-radius: 2px;
+    //     & li{
+    //         display: inline-block;
+    //         font-size: 105%;
+    //         font-weight: 400;
+    //         transition: all 0.2s ease-in-out;
+    //         padding: 0 1px;
+    //         border-radius: 2px;
 
-            &:not(:last-child)::after{
-                content: ", "
-            }
+    //         &:not(:last-child)::after{
+    //             content: ", "
+    //         }
 
-            &:hover {
-                background-color: $color-primary;
-                color: $color-light;
-            }
-        }
-    }
+    //         &:hover {
+    //             background-color: $color-primary;
+    //             color: $color-light;
+    //         }
+    //     }
+    // }
 }

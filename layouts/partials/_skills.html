@@ -4,37 +4,28 @@
         <h2 class="sideSection__title">{{ i18n "skills" }}</h2>
     </div>
     <div class="sideSection__content">
-        <p class="intro">{{.Skills.Intro}}</p>
-        <p>
-            Whilst I consider
-            <span class="skills__core">Leadership</span>,
-            <span class="skills__core">Agile</span>,
-            <span class="skills__core">Lean</span> and
-            <span class="skills__core">JVM OSS ecosystem</span>,
-            to be my core skills; in the past I've also successfully applied:
+        <p>Having worked on a broad diversity of products, company types, cultures and technical stacks has helped me not only to get exposure to an equally broad set of skills but to become a quick learner and adaptable profile and establish these on sound engineering values and principles.</p>
+        {{ range .Skills}}
+        <h3 class="skills__header"> {{ .Type }} </h3>
 
-        <ul class="skills">
+            <p class="intro">{{ .Intro }}</p>
 
-            {{ range where .Skills.Items "Weight" "eq" "XL"}}
-            <li style="font-size:1.4em;"> {{ .Value | safeHTML }}</li>
+            <ul class="skills skills__core">
+            {{ range .Core }}
+                <li class="skills__core__{{ .Weight }}"> {{ .Value | safeHTML }}</li>
+                <div class="skills__core__progressbar__container">
+                    <div class="skills__core__progressbar skills__core__progressbar__{{ .Weight | default "M" }}"></div>
+                </div>
             {{ end }}
+            </ul>
 
-            {{ range where .Skills.Items "Weight" "eq" "L"}}
-            <li style="font-size:1.2em;"> {{ .Value | safeHTML }}</li>
+            <ul class="skills__other">
+            {{ range .Other }}
+                <li class="skills__other__{{ .Weight }}"> {{ .Value | safeHTML }}</li>
             {{ end }}
-
-            {{ range where .Skills.Items "Weight" "==" nil }}
-            <li style="font-size:1em;"> {{ .Value | safeHTML }}</li>
-            {{ end }}
-
-            {{ range where .Skills.Items "Weight" "eq" "S"}}
-            <li style="font-size:0.8em;"> {{ .Value | safeHTML }}</li>
-            {{ end }}
-
-            {{ range where .Skills.Items "Weight" "eq" "XS"}}
-            <li style="font-size:0.6em;"> {{ .Value | safeHTML }}</li>
-            {{ end }}
-        </ul>
+            </ul>
+            <div class="force-break"></div>
+        {{ end }}
     </div>
 </div>
 {{ end }}
