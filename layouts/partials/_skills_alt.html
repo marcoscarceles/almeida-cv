@@ -1,0 +1,32 @@
+{{ if .Skills }}
+<div class="sideSection">
+    <div class="sideSection__heading">
+        <h2 class="sideSection__title">{{ i18n "skills" }}</h2>
+    </div>
+    <div class="sideSection__content">
+        
+        {{ range .Skills}}
+        <h3 class="skills__header"> {{ .Type }} </h3>
+            {{ if .Weight }}
+            <div class="skills__header__progressbar__container">
+                <div class="skills__header__progressbar skills__header__progressbar__{{ .Weight | default "M" }}"></div>
+            </div>
+            {{ end }}
+
+            <p class="intro">{{ .Intro }}</p>
+
+            <ul class="skills skills__core">
+            {{ range .Core }}
+                <li class="skills__core"> {{ .Value | safeHTML }}</li>
+            {{ end }}
+            </ul>
+
+            <ul class="skills__other">
+            {{ range .Other }}
+                <li class="skills__other__{{ .Weight }}"> {{ .Value | safeHTML }}</li>
+            {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
