@@ -20,7 +20,13 @@
         {{ with $data.BasicInfo.Photo }}
             <meta property="og:image" content="{{ . | absURL }}" />
         {{ end }}
-        {{ with $data.Profile | htmlUnescape | emojify | truncate 200 }}
+
+        {{ $fullProfile := $data.Profile }}
+        {{ if reflect.IsSlice $data.Profile }}
+            {{ $fullProfile = delimit $data.Profile ". " }}
+        {{ end }}
+
+        {{ with $fullProfile | htmlUnescape | emojify | truncate 200 }}
             <meta property="og:description" content="{{ . }}" />
             <meta name="description" content="{{ . }}" />
         {{ end }}

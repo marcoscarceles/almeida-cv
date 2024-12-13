@@ -4,7 +4,13 @@
         <h2 class="section__title">{{ i18n "profile" }}</h2>
     </div>
     <div class="section__content">
+    {{ if reflect.IsSlice .Profile }}
+        {{ range .Profile }}
+            <p>{{ . | safeHTML | emojify }}</p>
+        {{ end }}
+    {{ else}}
         <p>{{ .Profile | safeHTML | emojify }}</p>
+    {{ end }}
     </div>
 </div>
 {{ end }}
